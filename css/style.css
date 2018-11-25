@@ -19,6 +19,16 @@ body { /* get inherited by all child element of body */
     background-size: cover; /* fit the element inside of the box */
     background-position: top; /* background img stay on the top. if it's "bottom" and size is changed, top part will be cropped  */
 
+    position : relative;
     clip-path:  polygon(0 0, 100% 0, 100% 75vh,  0 100%)/*  clip out part of image,  left-top x y , right-top x y , right-bottom x y , left-bottom x y */
     /* https://bennettfeely.com/clippy/ */
+}
+
+.logo-box{ 
+    position: absolute;
+    top: 40px; /* reference (where top from) : parent element --> in this case : header */
+    left: 40px;
+}
+.logo {
+
 }
