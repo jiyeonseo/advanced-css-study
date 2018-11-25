@@ -30,5 +30,24 @@ body { /* get inherited by all child element of body */
     left: 40px;
 }
 .logo {
+    height: 35px;
+}
 
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 60px;
+    font-weight: 900; /* font thickness */
+    letter-spacing:  35px;
+
+}
+.heading-primary-sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 17.4px;
 }
