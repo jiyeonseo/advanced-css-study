@@ -42,6 +42,7 @@ body { /* get inherited by all child element of body */
     top: 40%; /* relation to the parent element */
     left: 50%;
     transform: translate(-50%, -50%); 
+    text-align: center;
 }
 
 .heading-primary {
@@ -49,6 +50,7 @@ body { /* get inherited by all child element of body */
     text-transform: uppercase;
     
     backface-visibility: hidden; /* if the back part of the element when we transform it, is visible or hidden for the user. */
+    margin-bottom: 60px;
 }
 
 .heading-primary-main {
@@ -108,3 +110,31 @@ body { /* get inherited by all child element of body */
         transform: translate(0); 
     }
 }
+
+.btn:link, 
+.btn:visited { /* :link : pseudo-class is a speacial state of a selector. button condition  */
+     text-transform: uppercase;
+     text-decoration: none;
+     padding: 15px 40px; /* top bottom left right*/
+     display: inline-block;
+     border-radius: 100px;
+     transition: all .2s; /* should be located in initial state, then affect to related states, hover, active ... */
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.2); /* x-direction shadow(0), y-direction(10px), blur(20px), color    */
+
+}
+
+.btn:active { /* when click */
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.btn-white {
+    background: #fff;
+    color: #777;
+}
+
+
