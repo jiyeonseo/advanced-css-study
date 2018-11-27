@@ -33,6 +33,10 @@ body { /* get inherited by all child element of body */
     height: 35px;
 }
 
+/* .logo:hover {
+    animation : moveInRight 1s ease-out;
+} */
+
 .text-box {
     position: absolute;
     top: 40%; /* relation to the parent element */
@@ -43,6 +47,8 @@ body { /* get inherited by all child element of body */
 .heading-primary {
     color: #fff;
     text-transform: uppercase;
+    
+    backface-visibility: hidden; /* if the back part of the element when we transform it, is visible or hidden for the user. */
 }
 
 .heading-primary-main {
@@ -51,10 +57,54 @@ body { /* get inherited by all child element of body */
     font-weight: 900; /* font thickness */
     letter-spacing:  35px;
 
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    /* animation-delay: 3s; */ /* duration before animation start */
+    /* animation-iteration-count: 3; */ 
+    animation-timing-function: ease-out 
+    /* ease-in : the animation will start slower and then accelate over time */
+    /* ease-out : fater -> slower */
+
+     
 }
 .heading-primary-sub {
     display: block;
     font-size: 20px;
     font-weight: 900;
     letter-spacing: 17.4px;
+
+    animation: moveInRight;
+    animation-duration: 1s;
+}
+
+/* animation */
+@keyframes moveInLeft {
+    0% { /* animation start */
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    /* 60% { 
+        transform: rotate(120deg);
+    } */
+    80% { 
+        transform: translateX(10px);
+    }
+    100% { /* animation end */
+        opacity: 1;
+        transform: translate(0); 
+    }
+}
+
+@keyframes moveInRight {
+    0% { /* animation start */
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    80% {     
+        transform: translateX(-10px);
+    }
+    100% { /* animation end */
+        opacity: 1;
+        transform: translate(0); 
+    }
 }
