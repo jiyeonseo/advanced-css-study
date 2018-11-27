@@ -33,6 +33,13 @@ body { /* get inherited by all child element of body */
     height: 35px;
 }
 
+.text-box {
+    position: absolute;
+    top: 40%; /* relation to the parent element */
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+
 .heading-primary {
     color: #fff;
     text-transform: uppercase;
