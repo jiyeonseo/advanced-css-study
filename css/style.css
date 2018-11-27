@@ -111,6 +111,19 @@ body { /* get inherited by all child element of body */
     }
 }
 
+@keyframes moveInBottom {
+    0% { /* animation start */
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    
+    100% { /* animation end */
+        opacity: 1;
+        transform: translate(0); 
+    }
+}
+
+
 .btn:link, 
 .btn:visited { /* :link : pseudo-class is a speacial state of a selector. button condition  */
      text-transform: uppercase;
@@ -119,6 +132,8 @@ body { /* get inherited by all child element of body */
      display: inline-block;
      border-radius: 100px;
      transition: all .2s; /* should be located in initial state, then affect to related states, hover, active ... */
+
+     position: relative;
 }
 
 .btn:hover {
@@ -137,4 +152,29 @@ body { /* get inherited by all child element of body */
     color: #777;
 }
 
+.btn::after { /* another element after the origin element */
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position : absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; 
+    transition: all .4s;
+}
 
+.btn-white::after {
+    background: #fff;
+}
+ 
+.btn:hover::after { /* after pseudo element only when the button hover */
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated {
+    animation: moveInBottom .5s ease-out .75s; /* animation-name, duration, timing-function, delay */
+    animation-fill-mode: backwards; /* style 0% (in animation) before the animation start  */
+}
